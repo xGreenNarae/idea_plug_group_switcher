@@ -1,0 +1,7 @@
+JSIntentionPowerPack
+JavaScript
+JavaScriptDebugger
+NodeJS
+com.intellij.css
+com.intellij.jsonpath
+tslint

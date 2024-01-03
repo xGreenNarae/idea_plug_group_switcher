@@ -1,0 +1,11 @@
+org.tbm98.flutter-riverpod-snippets
+io.flutter
+Dart
+org.jetbrains.android
+
+com.intellij.gradle
+com.jetbrains.idea.gradle.ext
+org.intellij.groovy
+JUnit
+org.jetbrains.kotlin
+
