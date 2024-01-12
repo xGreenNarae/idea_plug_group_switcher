@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "commonjs"
+    // 기타 다른 옵션들...
+  }
+}

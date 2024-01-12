@@ -1,0 +1,118 @@
+# cursor color by language
+com.github.lauvsong.langcursor
+
+# Acejump
+AceJump
+
+# Material Theme UI, Atom Material Icons
+# this has theme reset problem when re-enable
+# com.chrisrm.idea.MaterialThemeUI
+# com.mallowigi
+
+# CodeMetrics
+com.github.kisstkondoros.codemetrics
+
+# Fast-Scrolling
+de.santiv.fastscrolling
+
+# GitHub Copilot
+com.github.copilot
+
+# GitToolBox
+zielu.gittoolbox
+
+# IdeaVim, IdeaVim-EasyMotion
+IdeaVIM
+org.jetbrains.IdeaVim-EasyMotion
+
+# ideolog
+com.intellij.ideolog
+
+# Jump to Line
+org.jetbrains.jumpToLine
+
+# Korean Language Pack
+com.intellij.ko
+
+# SonarLint
+org.sonarlint.idea
+
+# String Manipulation
+String Manipulation
+
+# Translation
+cn.yiiguxing.plugin.translate
+
+# VSCode Keymap
+com.intellij.plugins.vscodekeymap
+
+# Machine Learning Code completion
+# Machine Learning in Search Everywhere
+# Turbo Complete
+com.intellij.completion.ml.ranking
+com.intellij.searcheverywhere.ml
+com.intellij.turboComplete
+
+# Settings Sync
+com.intellij.settingsSync
+
+# Database Tools and SQL
+com.intellij.database
+
+# Git, GitHub
+Git4Idea
+org.jetbrains.plugins.github
+
+# (5) Markdown, Properties, Shell Script, Toml, YAML    
+org.intellij.plugins.markdown
+com.jetbrains.sh
+com.intellij.properties
+org.jetbrains.plugins.yaml
+org.toml.lang
+
+# Copyright
+com.intellij.copyright
+
+# EditorConfig
+org.editorconfig.editorconfigjetbrains
+
+# Grazie Lite
+tanvd.grazi
+
+# IDEA Features Trainer
+training
+
+# In-editor Perfomance Hints
+com.intellij.LineProfiler
+
+# IntelliLang
+org.intellij.intelliLang
+
+# Package Checker
+org.jetbrains.security.package-checker
+
+# Performance Testing
+com.jetbrains.performancePlugin
+
+# Qodana
+org.intellij.qodana
+
+# Shared Projecet Indexes
+intellij.indexing.shared
+
+# Task Management
+com.intellij.tasks
+
+# Terminal
+org.jetbrains.plugins.terminal
+
+# TextMate Bundles
+org.jetbrains.plugins.textmate
+
+# Time Tracking
+com.intellij.tasks.timeTracking
+
+# WebP Support
+intellij.webp
+
+

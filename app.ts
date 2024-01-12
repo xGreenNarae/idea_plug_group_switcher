@@ -12,19 +12,21 @@ const disabledTxtPath: string = path.join(os.homedir(), 'Library/Application Sup
 // 공통으로 적용할 플러그인목록은 파일 이름이 common.txt 이어야 함.
 
 function ignoreComment(lines: string[]): string[] {
-    lines.forEach((line, index) => {
-        line = line.trim();
-        const commentIndex = line.indexOf('#');
+    let results = [];
+    for (const line of lines) {
+        let newLine = line.trim();
+        const commentIndex = newLine.indexOf('#');
 
         if (commentIndex > -1) { // inline comment exists
-            lines[index] = line.substring(0, commentIndex).trim();
+            newLine = newLine.substring(0, commentIndex).trim();
         }
-        if (line === '') {
-            lines.splice(index, 1);
+        if (newLine === '') {
+            continue;
         }
-    });
+        results.push(newLine);
+    }
 
-    return lines;
+    return results;
 }
 
 async function readPlugins() {
@@ -95,3 +97,7 @@ async function main() {
 }
 
 main();
+
+
+
+export { ignoreComment };

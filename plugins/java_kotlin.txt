@@ -47,4 +47,19 @@ org.jetbrains.java.decompiler
 
 org.jetbrains.kotlin
 
+# JPA Buddy
+com.haulmont.jpab
+
+# Bytecode Viewer
+ByteCodeViewer
+
+# Dependency Structure Matrix
+com.intellij.dsm
+
+# Diagrams
+com.intellij.diagram
+
+# Eclipse Interoperability
+org.jetbrains.idea.eclipse
+
 com.intellij.microservices.jvm # dependency

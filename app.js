@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ignoreComment = void 0;
 var os = require("os");
 var fs_1 = require("fs");
 var path = require("path");
@@ -44,19 +45,24 @@ var scriptPath = __dirname;
 var pluginsPath = path.join(scriptPath, 'plugins');
 var plugins = {};
 var disabledTxtPath = path.join(os.homedir(), 'Library/Application Support/JetBrains/IntelliJIdea2023.3/disabled_plugins.txt');
+// 공통으로 적용할 플러그인목록은 파일 이름이 common.txt 이어야 함.
 function ignoreComment(lines) {
-    lines.forEach(function (line, index) {
-        line = line.trim();
-        var commentIndex = line.indexOf('#');
+    var results = [];
+    for (var _i = 0, lines_1 = lines; _i < lines_1.length; _i++) {
+        var line = lines_1[_i];
+        var newLine = line.trim();
+        var commentIndex = newLine.indexOf('#');
         if (commentIndex > -1) { // inline comment exists
-            lines[index] = line.substring(0, commentIndex).trim();
+            newLine = newLine.substring(0, commentIndex).trim();
         }
-        if (line === '') {
-            lines.splice(index, 1);
+        if (newLine === '') {
+            continue;
         }
-    });
-    return lines;
+        results.push(newLine);
+    }
+    return results;
 }
+exports.ignoreComment = ignoreComment;
 function readPlugins() {
     return __awaiter(this, void 0, void 0, function () {
         var foundPlugins, _i, foundPlugins_1, plugin, lang, filePath, file, lines;
@@ -89,13 +95,12 @@ function readPlugins() {
 }
 function switchPluginsBySelectedConfig() {
     return __awaiter(this, void 0, void 0, function () {
-        var arg, selectedPlugins, file, lines, appliedPlugins;
+        var arg, file, lines, appliedPlugins;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     arg = process.argv[2];
-                    selectedPlugins = plugins[arg];
-                    if (!selectedPlugins) {
+                    if (!plugins[arg]) {
                         console.error("Invalid argument: ".concat(arg));
                         process.exit(1);
                     }
@@ -113,12 +118,11 @@ function switchPluginsBySelectedConfig() {
                             });
                         }
                     });
-                    // 선택된 언어의 플러그인을 disable 리스트에서 제거: 플러그인 활성화 (겹치는 요소가 있어서 덮어써야함)
-                    Object.keys(plugins).forEach(function (lang) {
-                        if (lang === arg) {
-                            lines = lines.filter(function (line) { return !plugins[lang].includes(line); });
-                        }
-                    });
+                    // 제거 이후, 추가 = 순서가 바뀌면 중복 요소가 추가되지 않음!
+                    // 공통 플러그인 추가: common
+                    lines = lines.filter(function (line) { return !plugins['common'].includes(line); });
+                    // 선택된 언어의 플러그인을 disable 리스트에서 제거: 플러그인 활성화
+                    lines = lines.filter(function (line) { return !plugins[arg].includes(line); });
                     appliedPlugins = lines.join('\n');
                     console.log("\uC801\uC6A9\uB41C \uD50C\uB7EC\uADF8\uC778 \uBAA9\uB85D: \n ".concat(appliedPlugins));
                     return [4 /*yield*/, fs_1.promises.writeFile(disabledTxtPath, appliedPlugins, 'utf8')];
