@@ -3,10 +3,11 @@ import {promises as fs} from 'fs';
 import * as path from 'path';
 import {spawn} from 'child_process';
 
-const scriptPath = __dirname;
-const pluginsPath = path.join(scriptPath, 'plugins');
+// 추가/제외 할 plugin 목록 파일 경로
+const pluginsPath = path.join(__dirname, 'plugins');
 let plugins = {};
 
+// IDEA 경로
 const disabledTxtPath: string = path.join(os.homedir(), 'Library/Application Support/JetBrains/IntelliJIdea2023.3/disabled_plugins.txt');
 
 // 공통으로 적용할 플러그인목록은 파일 이름이 common.txt 이어야 함.
