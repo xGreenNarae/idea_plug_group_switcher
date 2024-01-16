@@ -1,1 +1,2 @@
 com.jetbrains.rust
+com.intellij.nativeDebug
