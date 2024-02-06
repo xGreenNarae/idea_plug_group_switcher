@@ -1,0 +1,25 @@
+JSIntentionPowerPack
+JavaScript
+JavaScriptDebugger
+NodeJS
+com.intellij.jsonpath
+tslint
+
+intellij.prettierJS
+intellij.vitejs
+intellij.webpack
+org.jetbrains.plugins.vue
+
+XPathView
+HtmlTools
+Refactor-X
+
+com.intellij.css
+org.jetbrains.plugins.less
+org.jetbrains.plugins.sass
+com.intellij.tailwindcss
+org.intellij.plugins.postcss
+com.deadlock.scsyntax # styeld components and jsx
+com.intellij.plugins.webcomponents
+
+com.dmarcotte.handlebars

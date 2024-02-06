@@ -41,10 +41,11 @@ var os = require("os");
 var fs_1 = require("fs");
 var path = require("path");
 var child_process_1 = require("child_process");
-var scriptPath = __dirname;
-var pluginsPath = path.join(scriptPath, 'plugins');
+// 추가/제외 할 plugin 목록 파일 경로
+var pluginsPath = path.join(__dirname, 'plugins');
 var plugins = {};
-var disabledTxtPath = path.join(os.homedir(), 'Library/Application Support/JetBrains/IntelliJIdea2023.3/disabled_plugins.txt');
+// IDEA 경로
+var disabledTxtPath = path.join(os.homedir(), 'Library/Application Support/JetBrains/IntelliJIdea2024.1/disabled_plugins.txt');
 // 공통으로 적용할 플러그인목록은 파일 이름이 common.txt 이어야 함.
 function ignoreComment(lines) {
     var results = [];
